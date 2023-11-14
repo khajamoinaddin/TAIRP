@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of recipe Task</title>
+    <style>
+        /*-----------------NAV BAR CSS WORK STARTS HERE-----*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.narbar{
+    background-color: red;
+    font-family: 'Times New Roman', Times, serif;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navdiv
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+li a{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+button{
+    background-color: red;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+button a{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+html{
+    scroll-behavior: smooth;
+}
+        /*-----------------------Recipe css starts here------------------------*/
+        .content{
+    position: absolute;
+    top: 40%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+h1{
+    color: white;
+    font-size: 75px;
+    margin: 20px 0px 20px;
+}
+h3{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+h4{
+    color: #edffef;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+.button{
+position: absolute;
+background-color: red;
+color: #fff;
+text-decoration: none;
+border: 2px solid red;
+font-weight: bold;
+padding: 13px 30px;
+transform: .4s;
+}
+/*--------------------------------------Recipes started----------------------------------------*/
+.recipe{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: white;
+}
+.recipe h2{
+    color: black;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.box .card img{
+    width: 100%;
+    height: 1005;
+    object-fit: cover;
+   
+}
+.box .card .content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #edffef;
+    color: #182f32;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.box .card:hover .content{
+    opacity: 1;
+}
+.card h3{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #213032;
+}
+.box .card p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.box .card button{
+    position:relative;
+    background-color: #213032;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    font-weight: bold;
+    transform:.4s;
+    padding: 13px 30px;
+ }
+ .box .card button:hover{
+    background-color: #97a2a3;
+    color: #213032;
+    border: 2px solid black;
+    cursor: pointer;
+ }
+ /*----------------------------------------MAIN COURCES STARTED HERE-----------*/
+ .categories{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #314e52;
+ }
+ .categories h2{
+    color:#edffef;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+ }
+ .ca-card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 5px solid #ccc;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+ }
+ .box .ca-card .content{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 15px;
+    background-color: #edffef;
+    color: #182f32;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+ }
+ .box .ca-card:hover .content{
+    opacity: 1;
+ }
+ .ca-card h3{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #213032;
+ }
+.box .ca-card p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.box .ca-card button{
+    position:relative;
+    background-color: #213032;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    font-weight: bold;
+    transform:.4s;
+    padding: 13px 30px;
+}
+.box .ca-card button:hover{
+    background-color: #97a2a3;
+    color: #213032;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.box .ca-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*Contact form*/
+.contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background: #182f32;
+}
+.contact-info,.contact-form{
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    text-align: center;
+    color: #edffef;
+    font-size: 25px;
+}
+.contact-info h2, .contact-form h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #edffef;
+}
+.contact-form form{
+    text-align: center;
+}
+.contact-form label, 
+.contact-form input , 
+.contact-form textarea ,
+ .contact-form button {
+display: block;
+width: 100%;
+margin-bottom: 10px;
+}
+.contact-form button{
+    background-color: #213032;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    font-weight: bold;
+    transform:.4s;
+    padding: 10px 0px;
+}
+.contact-form button:hover{
+    background-color: #97a2a3;
+    color: #213032;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.contact-form label{
+    text-align: left;
+    color: #edffef;
+}
+.contact-form input, .contact-form textarea{
+    padding: 8px;
+}
+.contact-info p{
+padding: 15px;
+}
+.social-icons{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.social-icon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    color: #97a2a3;
+    text-align: center;
+    line-height: 40px;
+    font-size: 38px;
+}
+.social-icon:hover{
+    color: #314e52;
+    cursor: pointer;
+}
+footer{
+    padding: 20px 0;
+    background: #182f32;
+}
+footer h5{
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: center;
+    color: #97a2a3;
+}
+    </style>
+</head>
+<body bgcolor="black">
+    <!--------------NAV BAR STARTS HERE---------------------->
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo">
+                <a href="#">Cultery</a>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Context</a></li>
+                <li><a href="#">(call)-8688349726</a></li>
+                <button><a href="#">SignIn</a></button>
+                <button><a href="#">LogIn</a></button>
+            </ul>
+        </div>
+
+    </nav>
+     <!---------------------------NAV BAR ENDS HERE------------------------>
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="C:\Users\Admin\Downloads\cooking1.jpg" class="d-block w-100" alt="..." width="100%" height="600vh">
+            <div class="hero"> 
+                <div class="content">
+             <center>
+            <h1>ONLY TASTE IS REAL</h1>
+            <h1>REAL FOR FOOD</h1>
+            <h3>Elevate Your Cooking Game</h3>
+            <p style="color: white;">Cooking is a caring and nuturing act.Its a kind of ultimate gift for someone to cook for them.</p>
+             <center><div class="button">VIEW OUR MENU</div></center> 
+            </center>
+            </div>
+            </div>
+          </div> 
+          </div>
+          </div>
+          <!-------------------------------------HERE SECTION STARTED------------------------------------->
+          <div class="recipe"> 
+            <h2>Featured Recipes</h2>
+           <div class="box">
+            <div class="card"> 
+           <img src="C:\Users\Admin\Downloads\biryani.jpg" alt="" height="310px"> 
+           <div class="content"> 
+           <h3>Hyderabad Biryani</h3> 
+           <P>Price:240 full</P>
+            <button>View Recipe</button>
+           </div>
+           </div>
+           <div class="card">
+            <img src="C:\Users\Admin\Downloads\mutton.jpg" alt="" height="310px"> 
+              <div class="content">
+            <h3>Mutton Curry</h3>
+             <P>Price:300</P>
+            <button>View Recipe</button> 
+                </div>
+            </div>
+             <div class="card">
+            <img src="C:\Users\Admin\Downloads\paya.jpg" alt="" height="310px">
+            <div class="content">
+            <h3>Paya Recipe</h3>
+             <P> Price:100</P>
+             <button>View Recipe</button>
+           </div> 
+        </div> 
+           <div class="card">
+        <img src="C:\Users\Admin\Downloads\icecream.jpg" alt="" height="310px"> 
+        <div class="content">
+        <h3>ICE CREAM</h3> 
+         <P> Price:150</P> 
+         <button>View Recipe</button>
+            </div>
+            </div>
+            <div class="card">
+            <img src="C:\Users\Admin\Downloads\drinkks.jpg" alt="" height="310px">
+            <div class="content">
+            <h3>RoseMilk</h3>
+            <P>Price:70</P>
+         <button>View Recipe</button> 
+         </div> 
+          </div>
+           <div class="card">
+     <img src="C:\Users\Admin\Downloads\kheer.jpg" alt=""> 
+    <div class="content"> 
+    <h3>Kaddu ki kheer</h3>
+     <P>Price:50</P> 
+    <button>View Recipe</button>
+    </div>
+    </div>
+     <div class="card">
+    <img src="C:\Users\Admin\Downloads\double ka meetha.jpg" alt="">
+    <div class="content"> 
+    <h3>Double ka Meetha</h3>
+    <P>Price:100</P>
+    <button>View Recipe</button>
+    </div>
+    </div>
+    <div class="card"> 
+    <img src="C:\Users\Admin\Downloads\foood1.jpeg" alt="" height="310px">
+    <div class="content">
+    <h3>Veg Items</h3>
+    <P>Price:200</P>
+     <button>View Recipe</button> 
+    </div>
+    </div>
+    </div>
+    </div>
+                <!--Main cources started-->
+        <div class="categories"> 
+        <h2>categories</h2>
+        <div class="box">
+        <div class="ca-card">
+       <img src= "C:\Users\Admin\Downloads\download food.jpg" alt="">
+        <div class="content">
+        <h3>Main Courses</h3>
+        <p>There is no sincire love than the love of of these items.</p>
+        <button>Eat More</button>
+        </div>
+        </div>
+        <div class="ca-card">
+        <img src= "C:\Users\Admin\Downloads\desserts-update.jpg" alt="">
+        <div class="content">
+        <h3>Desserts</h3>
+        <p>Life is short ,Eat dessert first.</p>
+        <button>Eat More</button>
+        </div> 
+        </div>
+        <div class="ca-card"> 
+        <img src= "C:\Users\Admin\Downloads\download (1) healthy.jpg" alt=""> 
+        <div class="content">
+        <h3>Healthy Eats</h3>
+        <p>Improve your body's stamina and health with these Items.</p> 
+       <button>Eat More</button>
+        </div>
+        </div>
+     <div class="ca-card"> 
+       <img src="C:\Users\Admin\Downloads\download.jpg"alt="">
+        <div class="content">
+       <h3>Baking</h3>
+      <p>Taste your sweetbuds with this Bake.</p>
+        <button>Eat More</button>
+   </div>
+    </div>
+    </div>
+   </div>
+                                      <!------------contact section--------------------------> 
+   <section class="contact">
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+     <strong>Address:</strong>
+ <p>10/200-Punjagutta, HYDERABAD,INDIA</p>
+  <p><strong>Phone:</strong>+918688349726</p>
+   <p><strong>Email:</strong>mdkhaja50489@gmail.com</p>
+    </div>
+   <div class="contact-form">
+    <h2>Contact Form</h2>
+  <form>
+  <label for="name">Name:</label>
+ <input type="text" name="name" id="name" required>
+     <label for="email">Email:</label>
+ <input type="email" name="email" id="email" required>
+     <label for="message">Message:</label>
+     <textarea name="message" id="message" required>                  
+      </textarea> 
+      <button type="submit">Send Message</button> 
+  </form>
+   </div>
+     </section>
+    <footer>
+       <div class="social-icons">
+      <a href="#" class="social-icon">
+        <i class="fab fa-facebook">
+         </i> 
+        </a>
+         <a href="#" class="social-icon">
+             <i class="fab fa-twitter"></i>
+             </a>
+              <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+            </a> 
+        </div>
+    </footer>
+</body>
+</html>
